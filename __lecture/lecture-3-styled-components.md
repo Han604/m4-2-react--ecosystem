@@ -46,7 +46,7 @@ const Button = styled.button(`
 
 # Browser support
 
-<img src='./assets/caniuse-template-literals.png' style=max-width:60vw' />
+<img src='./assets/caniuse-template-literals.png' style='max-width:60vw' />
 
 ---
 
@@ -99,13 +99,14 @@ Convert the following inline styles to styled-components
 
 ```
 
-
 ```jsx
+    const divWrapper = styled.div`
+      margin: 0;
+      height: 300px;
+    `;
 function App(props) {
   return (
-    <div className="wrapper">
-      Hello World
-    </div>
+    <divWrapper>hello world</divWrapper>
   )
 }
 ```
@@ -133,18 +134,34 @@ function App(props) {
 ```
 
 ```jsx
+const styledIcon = styled.i`
+  width 32px;
+  height: 32px;
+`;
+
+const styledButton = styled.button`
+  color: tomato;
+  font-weight: bold;
+  padding: 20px;
+
+&:hover,
+&:focus {
+  transform: translateY(-3px);
+}
+`;
+
 function IconButton(props) {
   return (
-    <button className="btn">
-      <i className="icon">
+    <styledButton>
+      <styledIcon>
         {props.icon}
-      </i>
+      </styledIcon>
       {props.children}
-    </button>
+    </styledButton>
   )
 }
 ```
-
+you can also NEST THE ICON IN THE BUTTONS STYLING!
 ---
 
 ### Exercise 3
